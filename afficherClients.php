@@ -53,10 +53,10 @@ $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                             echo "<tr class='even:bg-yellow-50 odd:bg-blue-300'>";
-                            echo "<td class='px-4 py-2'>" . $row['num_client'] . "</td>";
-                            echo "<td class='px-4 py-2'>" . $row['nom'] . "</td>";
-                            echo "<td class='px-4 py-2'>" . $row['adresse'] . "</td>";
-                            echo "<td class='px-4 py-2'>" . $row['tel'] . "</td>";
+                            echo "<td class='px-4 py-2'>{$row['num_client']}</td>";
+                            echo "<td class='px-4 py-2'>{$row['nom']}</td>";
+                            echo "<td class='px-4 py-2'>{$row['adresse']}</td>";
+                            echo "<td class='px-4 py-2'>{$row['tel']}</td>";
                             echo "<td class='flex gap-2 px-4 py-2>
                             <a href=''>
                                 <svg class='text-blue-900 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>

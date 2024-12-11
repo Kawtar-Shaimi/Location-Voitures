@@ -1,7 +1,7 @@
 <?php
 require "BD/database.php";
 
-$sql = "SELECT * FROM voitures";
+$sql = "SELECT * FROM contrats";
 $result = $conn->query($sql);
 ?>
 
@@ -11,7 +11,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>    
 </head>
 <body>
     <div class="whole-container">
@@ -40,23 +40,27 @@ $result = $conn->query($sql);
                 <button class="bg-blue-900 px-5 py-3 text-yellow-100 rounded">Ajouter Client</button>
             </div>
             <div class="clients pt-32 w-full pr-5 top-4">
-                <p class="text-center pb-2 font-bold text-blue-900 text-3xl">Liste des voitures</p>
+                <p class="text-center pb-2 font-bold text-blue-900 text-3xl">Liste des clients</p>
                 <table class="table-auto border-collapse border border-gray-500 w-full">
                     <tr>
-                        <th class=" py-2 px-2 text-left bg-blue-300">Num Immatriculation</th>
-                        <th class=" py-2 px-5 text-left bg-blue-300">Marque</th>
-                        <th class=" py-2 px-2 text-left bg-blue-300">Modele</th>
-                        <th class=" py-2 px-4 text-left bg-blue-300">Année</th>
+                        <th class=" py-2 px-2 text-left bg-blue-300">Num contrat</th>
+                        <th class=" py-2 px-5 text-left bg-blue-300">Date Debut</th>
+                        <th class=" py-2 px-2 text-left bg-blue-300">Date Fin</th>
+                        <th class=" py-2 px-4 text-left bg-blue-300">Duree</th>
+                        <th class=" py-2 px-4 text-left bg-blue-300">Num Client</th>
+                        <th class=" py-2 px-4 text-left bg-blue-300">Num Immatriculation</th>
                         <th class=" py-2 px-4 text-left bg-blue-300">Action</th>
                     </tr>
                     <?php
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                             echo "<tr class='even:bg-yellow-50 odd:bg-blue-300'>";
+                            echo "<td class='px-4 py-2'>{$row['NumContrat']}</td>";
+                            echo "<td class='px-4 py-2'>{$row['DateDebut']}</td>";
+                            echo "<td class='px-4 py-2'>{$row['DateFin']}</td>";
+                            echo "<td class='px-4 py-2'>{$row['Duree']}</td>";
+                            echo "<td class='px-4 py-2'>{$row['num_client']}</td>";
                             echo "<td class='px-4 py-2'>{$row['NumImmatriculation']}</td>";
-                            echo "<td class='px-4 py-2'>{$row['Marque']}</td>";
-                            echo "<td class='px-4 py-2'>{$row['Modele']}</td>";
-                            echo "<td class='px-4 py-2'>{$row['Annee']}</td>";
                             echo "<td class='flex gap-2 px-4 py-2>
                             <a href=''>
                                 <svg class='text-blue-900 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
@@ -80,6 +84,5 @@ $result = $conn->query($sql);
             </div>        
         </div>
     </div>
-
 </body>
 </html>
