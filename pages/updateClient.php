@@ -31,7 +31,7 @@
         </div>
         <fieldset class="flex justify-center items-center w-4/5">
             <div class="w-[50%]" >
-                <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Ajouter clients</p>
+                <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Modifier clients</p>
                 <form class="flex flex-col justify-center pl-10 bg-blue-900 h-96 rounded-md shadow-xl" action="" method="post">
                     <label class="text-yellow-100">Numéro client :</label>
                     <input class="w-[80%] bg-yellow-50 rounded" type="number" name="num_client"><br>
@@ -41,7 +41,7 @@
                     <input class="w-[80%] bg-yellow-50 rounded" type="text" name="adresse"><br>
                     <label class="text-yellow-100">Téléphone :</label>
                     <input class="w-[80%] bg-yellow-50 rounded" type="tel" name="tel"><br>
-                    <button class="bg-yellow-100 w-24 py-1 rounded">Ajouter</button>
+                    <button class="bg-yellow-100 w-24 py-1 rounded">Modifier</button>
                 </form>
             </div>
         </fieldset>

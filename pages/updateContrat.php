@@ -7,8 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="flex gap-5">
-        <div class="sidebar bg-blue-900 w-1/5 h-screen  py-10 text-center rounded flex flex-col gap-7 relative">
+    <div class="flex">
+        <div class="sidebar bg-blue-900 w-1/5 h-screen py-10 text-center rounded flex flex-col gap-7">
             <img class="absolute -top-14 left-16 w-44 " src="../imgs/ab16f834-8575-4471-b92e-f5d2951f9b44-removebg-preview.png" alt="logo">
             <div class="icon flex gap-5 pt-10 justify-center">
                 <svg class="text-yellow-100 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -30,18 +30,22 @@
             </div>
         </div>
         <fieldset class="flex justify-center items-center w-4/5">
-            <div class="w-[50%]" >
-                <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Ajouter clients</p>
-                <form class="flex flex-col justify-center pl-10 bg-blue-900 h-96 rounded-md shadow-xl" action="" method="post">
+            <div class="w-[50%]">
+                <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Modifier contrats</p>
+                <form class="flex flex-col justify-center pl-10 bg-blue-900 h-[550px] rounded-md shadow-xl" action="" method="post">
+                    <label class="text-yellow-100">Numéro contrat :</label>
+                    <input class="w-[80%] bg-yellow-50 rounded" type="number" name="NumContrat"><br>
+                    <label class="text-yellow-100">Date début :</label>
+                    <input class="w-[80%] bg-yellow-50 rounded" type="date" name="DateDebut"><br>
+                    <label class="text-yellow-100">Date fin :</label>
+                    <input class="w-[80%] bg-yellow-50 rounded" type="date" name="DateFin"><br>
+                    <label class="text-yellow-100">Durée :</label>
+                    <input class="w-[80%] bg-yellow-50 rounded" type="number" name="Duree"><br>
                     <label class="text-yellow-100">Numéro client :</label>
                     <input class="w-[80%] bg-yellow-50 rounded" type="number" name="num_client"><br>
-                    <label class="text-yellow-100">Nom :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded" type="text" name="nom"><br>
-                    <label class="text-yellow-100">Adresse :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded" type="text" name="adresse"><br>
-                    <label class="text-yellow-100">Téléphone :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded" type="tel" name="tel"><br>
-                    <button class="bg-yellow-100 w-24 py-1 rounded">Ajouter</button>
+                    <label class="text-yellow-100">Numéro Immatriculation :</label>
+                    <input class="w-[80%] bg-yellow-50 rounded" type="number" name="NumImmatriculation"><br>
+                    <button class="bg-yellow-100 w-24 py-1 rounded">Modifier</button>
                 </form>
             </div>
         </fieldset>
