@@ -14,7 +14,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="flex gap-5">
+    <div class="flex">
         <div class="sidebar bg-blue-900 w-1/5 h-screen  py-10 text-center rounded flex flex-col gap-7">
                 <div class="icon flex gap-5 justify-center">
                     <svg class="text-yellow-100 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -35,25 +35,27 @@
                     <p class="my-3 font-bold text-yellow-100"><a href="../Contrats/afficherContrat.php">Contrats</a></p>
                 </div>
         </div>
-        <fieldset class="flex justify-center items-center w-4/5">
-            <div class="w-[50%]" >
-                <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Ajouter Voiture</p>
-                <form class="flex flex-col justify-center pl-10 bg-blue-900 h-96 rounded-md shadow-xl" action="../../Controllers/Voitures/ajouterVoiture.php" method="post">
-                    <label class="text-yellow-100">Numéro Immatriculation :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="NumImmatriculation"><br>
-                    <label class="text-yellow-100">Marque :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="Marque"><br>
-                    <?php if ($marqueErr) echo "<p class='text-red-600'>$marqueErr</p><br>"?>
-                    <label class="text-yellow-100">Modele :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="Modele"><br>
-                    <?php if ($modeleErr) echo "<p class='text-red-600'>$modeleErr</p><br>"?>
-                    <label class="text-yellow-100">Année :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="Annee"><br>
-                    <?php if ($anneeErr) echo "<p class='text-red-600'>$anneeErr</p><br>"?>
-                    <button class="bg-yellow-100 w-24 py-1 rounded">Ajouter</button>
-                </form>
-            </div>
-        </fieldset>
+        <div class="w-4/5 bg-cover bg-center flex justify-center items-center" style="background-image: url('../../imgs/c.jpg');">
+            <fieldset class="flex justify-center items-center w-4/5 m-auto">
+                <div class="w-[50%]" >
+                    <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Ajouter Voiture</p>
+                    <form class="flex flex-col justify-center pl-10 bg-blue-900 h-96 rounded-md shadow-xl" action="../../Controllers/Voitures/ajouterVoiture.php" method="post">
+                        <label class="text-yellow-100">Numéro Immatriculation :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="NumImmatriculation"><br>
+                        <label class="text-yellow-100">Marque :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="Marque"><br>
+                        <?php if ($marqueErr) echo "<p class='text-red-600'>$marqueErr</p><br>"?>
+                        <label class="text-yellow-100">Modele :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="Modele"><br>
+                        <?php if ($modeleErr) echo "<p class='text-red-600'>$modeleErr</p><br>"?>
+                        <label class="text-yellow-100">Année :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="Annee"><br>
+                        <?php if ($anneeErr) echo "<p class='text-red-600'>$anneeErr</p><br>"?>
+                        <button class="bg-yellow-100 w-24 py-1 rounded">Ajouter</button>
+                    </form>
+                </div>
+            </fieldset>
+        </div>
     </div>
 </body>
 </html>

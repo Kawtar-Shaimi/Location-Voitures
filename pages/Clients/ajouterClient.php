@@ -14,9 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../">
 </head>
-    <div class="flex gap-5">
+    <div class="flex">
         <div class="sidebar bg-blue-900 w-1/5 h-screen  py-10 text-center rounded flex flex-col gap-7">
                 <div class="icon flex gap-5 justify-center">
                     <svg class="text-yellow-100 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -37,25 +36,26 @@
                     <p class="my-3 font-bold text-yellow-100"><a href="../Contrats/afficherContrat.php">Contrats</a></p>
                 </div>
         </div>
-        
-        <fieldset class="flex justify-center items-center w-4/5">
-            <div class="w-[50%]" >
-                <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Ajouter clients</p>
-                <form class="flex flex-col justify-center pl-10 bg-blue-900 h-96 rounded-md shadow-xl" action="../../Controllers/Clients/ajouterClient.php" method="post">
-                    <?php if ($numErr) echo "<p class='text-red-600'>$numErr</p><br>"?>
-                    <label class="text-yellow-100">Nom :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="nom"><br>
-                    <?php if ($nameErr) echo "<p class='text-red-600'>$nameErr</p><br>"?>
-                    <label class="text-yellow-100">Adresse :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="adresse"><br>
-                    <?php if ($addressErr) echo "<p class='text-red-600'>$addressErr</p><br>"?>
-                    <label class="text-yellow-100">Téléphone :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="tel" name="tel"><br>
-                    <?php if ($phoneErr) echo "<p class='text-red-600'>$phoneErr</p><br>"?>
-                    <button class="bg-yellow-100 w-24 py-1 rounded">Ajouter</button>
-                </form>
-            </div>         
-        </fieldset>
+        <div class="w-4/5 bg-cover bg-center flex justify-center items-center" style="background-image: url('../../imgs/c.jpg');">
+            <fieldset class="flex justify-center items-center w-4/5">
+                <div class="w-[50%]" >
+                    <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Ajouter clients</p>
+                    <form class="flex flex-col justify-center pl-10 bg-blue-900 h-96 rounded-md shadow-xl" action="../../Controllers/Clients/ajouterClient.php" method="post">
+                        <?php if ($numErr) echo "<p class='text-red-600'>$numErr</p><br>"?>
+                        <label class="text-yellow-100">Nom :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="nom"><br>
+                        <?php if ($nameErr) echo "<p class='text-red-600'>$nameErr</p><br>"?>
+                        <label class="text-yellow-100">Adresse :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="adresse"><br>
+                        <?php if ($addressErr) echo "<p class='text-red-600'>$addressErr</p><br>"?>
+                        <label class="text-yellow-100">Téléphone :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="tel" name="tel"><br>
+                        <?php if ($phoneErr) echo "<p class='text-red-600'>$phoneErr</p><br>"?>
+                        <button class="bg-yellow-100 w-24 py-1 rounded">Ajouter</button>
+                    </form>
+                </div>         
+            </fieldset>
+        </div>
 
     </div>
 </body>

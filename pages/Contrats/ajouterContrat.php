@@ -36,27 +36,29 @@
                 <p class="my-3 font-bold text-yellow-100"><a href="./afficherContrat.php">Contrats</a></p>
             </div>
         </div>
-        <fieldset class="flex justify-center items-center w-4/5">
-            <div class="w-[50%]">
-                <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Ajouter contrats</p>
-                <form class="flex flex-col justify-center pl-10 bg-blue-900 h-[550px] rounded-md shadow-xl" action="../../Controllers/Contrats/ajouterContrat.php" method="post">
-                    <label class="text-yellow-100">Date début :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="date" name="DateDebut"><br>
-                    <?php if ($dateDebutErr) echo "<p class='text-red-600'>$dateDebutErr</p><br>"?>
-                    <label class="text-yellow-100">Date fin :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="date" name="DateFin"><br>
-                    <?php if ($dateFinErr) echo "<p class='text-red-600'>$dateFinErr</p><br>"?>
-                    <label class="text-yellow-100">Durée :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="number" name="Duree"><br>
-                    <?php if ($dureeErr) echo "<p class='text-red-600'>$dureeErr</p><br>"?>
-                    <label class="text-yellow-100">Numéro client :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="number" name="num_client"><br>
-                    <label class="text-yellow-100">Numéro Immatriculation :</label>
-                    <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="NumImmatriculation"><br>
-                    <button class="bg-yellow-100 w-24 py-1 rounded">Ajouter</button>
-                </form>
-            </div>
-        </fieldset>
+        <div class="w-4/5 bg-cover bg-center flex justify-center items-center" style="background-image: url('../../imgs/c.jpg');">
+            <fieldset class="flex justify-center items-center w-4/5">
+                <div class="w-[50%]">
+                    <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Ajouter contrats</p>
+                    <form class="flex flex-col justify-center pl-10 bg-blue-900 h-[550px] rounded-md shadow-xl" action="../../Controllers/Contrats/ajouterContrat.php" method="post">
+                        <label class="text-yellow-100">Date début :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="date" name="DateDebut"><br>
+                        <?php if ($dateDebutErr) echo "<p class='text-red-600'>$dateDebutErr</p><br>"?>
+                        <label class="text-yellow-100">Date fin :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="date" name="DateFin"><br>
+                        <?php if ($dateFinErr) echo "<p class='text-red-600'>$dateFinErr</p><br>"?>
+                        <label class="text-yellow-100">Durée :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="number" name="Duree"><br>
+                        <?php if ($dureeErr) echo "<p class='text-red-600'>$dureeErr</p><br>"?>
+                        <label class="text-yellow-100">Numéro client :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="number" name="num_client"><br>
+                        <label class="text-yellow-100">Numéro Immatriculation :</label>
+                        <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="NumImmatriculation"><br>
+                        <button class="bg-yellow-100 w-24 py-1 rounded">Ajouter</button>
+                    </form>
+                </div>
+            </fieldset>
+        </div>
     </div>
 </body>
 </html>

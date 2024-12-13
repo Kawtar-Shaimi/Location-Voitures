@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="whole-container">
-        <div class="flex gap-5 relative">
+        <div class="flex relative">
             <div class="sidebar bg-blue-900 w-1/5 h-screen  py-10 text-center rounded flex flex-col gap-7">
                 <div class="icon flex gap-5 justify-center">
                     <svg class="text-yellow-100 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -40,7 +40,7 @@
                     <p class="my-3 font-bold text-yellow-100"><a href="../Contrats/afficherContrat.php">Contrats</a></p>
                 </div>
             </div>
-            <div class="w-4/5">
+            <div class="w-4/5 bg-cover bg-center" style="background-image: url('../../imgs/c.jpg');">
                 <?php
                     if ($successMessage){
                         echo "
@@ -50,10 +50,10 @@
                         ";
                     }
                 ?>
-                <div class="mt-10">
+                <div class="mt-10 ms-5">
                     <button class="bg-blue-900 px-5 py-3 text-yellow-100 rounded"><a href="./ajouterVoiture.php">Ajouter Voiture</a></button>
                 </div>
-                <div class="clients w-full pr-5 top-4">
+                <div class="clients w-full pr-5 top-4 ps-5">
                     <p class="text-center pb-2 font-bold text-blue-900 text-3xl">Liste des voitures</p>
                     <table class="table-auto border-collapse border border-gray-500 w-full">
                         <tr>
