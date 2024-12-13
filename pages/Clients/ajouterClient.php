@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../">
 </head>
-<body>
     <div class="flex gap-5">
         <div class="sidebar bg-blue-900 w-1/5 h-screen  py-10 text-center rounded flex flex-col gap-7">
                 <div class="icon flex gap-5 justify-center">
@@ -37,6 +37,7 @@
                     <p class="my-3 font-bold text-yellow-100"><a href="../Contrats/afficherContrat.php">Contrats</a></p>
                 </div>
         </div>
+        
         <fieldset class="flex justify-center items-center w-4/5">
             <div class="w-[50%]" >
                 <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Ajouter clients</p>
@@ -53,8 +54,9 @@
                     <?php if ($phoneErr) echo "<p class='text-red-600'>$phoneErr</p><br>"?>
                     <button class="bg-yellow-100 w-24 py-1 rounded">Ajouter</button>
                 </form>
-            </div>
+            </div>         
         </fieldset>
+
     </div>
 </body>
 </html>
