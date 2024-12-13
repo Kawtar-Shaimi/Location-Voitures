@@ -4,6 +4,7 @@
     session_start();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $numContrat = (int) $_POST['NumContrat'];
         $dateDebut = $_POST['DateDebut'];
         $dateFin = $_POST['DateFin'];
         $duree = (int) $_POST['Duree'];
@@ -31,7 +32,7 @@
 
         if ($isValid) {
             try {
-                $sql = "UPDATE contrats SET DateDebut = ?, DateFin = ?, Duree = ?, num_client = ?, NumImmatriculation = ? WHERE NumContrat = ?";
+                $sql = "UPDATE lcontrats SET DateDebut = ?, DateFin = ?, Duree = ?, num_client = ?, NumImmatriculation = ? WHERE NumContrat = ?";
                 $stmt = $conn->prepare($sql);
 
                 if (!$stmt) {

@@ -41,6 +41,7 @@
             <div class="w-[50%]" >
                 <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Modifier clients</p>
                 <form class="flex flex-col justify-center pl-10 bg-blue-900 h-96 rounded-md shadow-xl" action="../../Controllers/Clients/updateClient.php" method="post">
+                    <input type="hidden" name="num_client" value="<?php if($client_infos) echo $client_infos['num_client']; ?>">
                     <label class="text-yellow-100">Nom :</label>
                     <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="nom" value="<?php if($client_infos) echo $client_infos['nom']; ?>"><br>
                     <?php if ($nameErr) echo "<p class='text-red-600'>$nameErr</p><br>"?>

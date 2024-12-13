@@ -27,14 +27,14 @@
 
         if ($isValid) {
             try {
-                $sql = "Update clients set num_client = ?, nom = ?, tel = ?, adresse = ? where num_client = ?";
+                $sql = "Update clients set nom = ?, tel = ?, adresse = ? where num_client = ?";
                 $stmt = $conn->prepare($sql);
 
                 if (!$stmt) {
                     throw new Exception("Database error: " . $conn->error);
                 }
 
-                $stmt->bind_param("isssi", $num_client, $name, $phone, $address, $num_client);
+                $stmt->bind_param("sssi", $name, $phone, $address, $num_client);
 
                 if ($stmt->execute()) {
                     $_SESSION['success_message'] = "Client updated successfully.";

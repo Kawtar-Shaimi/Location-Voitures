@@ -27,7 +27,7 @@
 
         if ($isValid) {
             try {
-                $sql = "INSERT INTO clients (num_client, nom, tel, adresse) VALUES (?, ?, ?, ?)";
+                $sql = "INSERT INTO clients (nom, tel, adresse) VALUES (?, ?, ?)";
                 $stmt = $conn->prepare($sql);
 
                 if (!$stmt) {
@@ -35,7 +35,7 @@
                     throw new Exception("Database error: " . $conn->error);
                 }
 
-                $stmt->bind_param("isss", $num_client, $name, $phone, $address);
+                $stmt->bind_param("sss", $name, $phone, $address);
 
                 if ($stmt->execute()) {
                     $_SESSION['success_message'] = "Client added successfully.";

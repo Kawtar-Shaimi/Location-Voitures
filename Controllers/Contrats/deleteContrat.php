@@ -8,7 +8,7 @@
         $numContrat = (int) $_GET['id'];
 
         try {
-            $sql = "Select * From lcontrats where NumContrat = ?";
+            $sql = "Delete From lcontrats where NumContrat = ?";
             $stmt = $conn->prepare($sql);
 
             if (!$stmt) {
@@ -17,19 +17,17 @@
 
             $stmt->bind_param("i", $numContrat);
 
-            if (!$stmt->execute()) {
-                throw new Exception("Execution failed: " . $stmt->error);
+            if ($stmt->execute()) {
+                $_SESSION['success_message'] = "Contrat deleted successfully.";
+                $stmt->close();
+                $conn->close();
+                header("Location: ../../pages/Contrats/afficherContrat.php");
+                exit;
+            } else {
+                throw new Exception("Failed to insert data: " . $stmt->error);
             }
-
-            $result = $stmt->get_result();
-            if ($result->num_rows > 0) {
-                $_SESSION['contrat_infos'] = $result->fetch_assoc();
-            }
-            $stmt->close();
-            $conn->close();
-            header("Location: ../../pages/Contrats/updateContrat.php");
-            exit;
         } catch (Exception $e) {
             $successMessage = "Error: " . $e->getMessage();
+            echo $successMessage;
         }
     }

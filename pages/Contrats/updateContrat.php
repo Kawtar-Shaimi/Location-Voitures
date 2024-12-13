@@ -40,6 +40,7 @@
             <div class="w-[50%]">
                 <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900">Modifier contrats</p>
                 <form class="flex flex-col justify-center pl-10 bg-blue-900 h-[550px] rounded-md shadow-xl" action="../../Controllers/Contrats/updateContrat.php" method="post">
+                    <input type="hidden" name="NumContrat" value="<?php if($contrat_infos) echo $contrat_infos['NumContrat']; ?>">
                     <label class="text-yellow-100">Date début :</label>
                     <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="date" name="DateDebut" value="<?php if($contrat_infos) echo $contrat_infos['DateDebut']; ?>"><br>
                     <?php if ($dateDebutErr) echo "<p class='text-red-600'>$dateDebutErr</p><br>"?>
