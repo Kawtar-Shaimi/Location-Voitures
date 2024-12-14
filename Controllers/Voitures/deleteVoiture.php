@@ -8,7 +8,7 @@
         $numImmatriculation = $_GET['id'];
 
         try {
-            $sql = "Delete From lcontrats where NumImmatriculation = ?";
+            $sql = "Delete From voitures where NumImmatriculation = ?";
             $stmt = $conn->prepare($sql);
 
             if (!$stmt) {
@@ -18,25 +18,11 @@
             $stmt->bind_param("s", $numImmatriculation);
 
             if ($stmt->execute()) {
-                $sql = "Delete From voitures where NumImmatriculation = ?";
-                $stmt = $conn->prepare($sql);
-
-                if (!$stmt) {
-                    throw new Exception("Database error: " . $conn->error);
-                }
-
-                $stmt->bind_param("s", $numImmatriculation);
-
-                if ($stmt->execute()) {
-                    $_SESSION['success_message'] = "Voiture deleted successfully.";
-                    $stmt->close();
-                    $conn->close();
-                    header("Location: ../../pages/Voitures/afficherVoitures.php");
-                    exit;
-                } else {
-                    throw new Exception("Failed to insert data: " . $stmt->error);
-                }
-                
+                $_SESSION['success_message'] = "Voiture deleted successfully.";
+                $stmt->close();
+                $conn->close();
+                header("Location: ../../pages/Voitures/afficherVoitures.php");
+                exit;
             } else {
                 throw new Exception("Failed to insert data: " . $stmt->error);
             }

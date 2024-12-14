@@ -21,7 +21,7 @@
                 $_SESSION['success_message'] = "Contrat deleted successfully.";
                 $stmt->close();
                 $conn->close();
-                header("Location: ../../pages/Contrats/afficherContrat.php");
+                header("Location: ../../pages/Contrats/afficherContrats.php");
                 exit;
             } else {
                 throw new Exception("Failed to insert data: " . $stmt->error);
