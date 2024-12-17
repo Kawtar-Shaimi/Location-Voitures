@@ -4,7 +4,6 @@
     session_start();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $num_client = (int) $_POST['num_client'];
         $name = trim($_POST['nom']);
         $phone = trim($_POST['tel']);
         $address = trim($_POST['adresse']);
@@ -31,7 +30,6 @@
                 $stmt = $conn->prepare($sql);
 
                 if (!$stmt) {
-                    
                     throw new Exception("Database error: " . $conn->error);
                 }
 

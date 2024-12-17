@@ -23,6 +23,7 @@
 
             $result = $stmt->get_result();
             if ($result->num_rows > 0) {
+                // on a pas utilisée while car knjibu juste un client
                 $_SESSION['client_infos'] = $result->fetch_assoc();
             }
             $stmt->close();

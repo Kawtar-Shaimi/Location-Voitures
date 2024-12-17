@@ -4,7 +4,7 @@
     session_start();
 
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
-
+        //returns string on le transform pour qu'il return int
         $num_client = (int) $_GET['id'];
 
         try {

@@ -3,8 +3,7 @@
     $nameErr = $_SESSION['nameErr'] ?? null;
     $phoneErr = $_SESSION['phoneErr'] ?? null;
     $addressErr = $_SESSION['addressErr'] ?? null;
-    $numErr = $_SESSION['numErr'] ?? null;
-    unset($_SESSION['nameErr'],$_SESSION['phoneErr'],$_SESSION['addressErr'],$_SESSION['numErr']);
+    unset($_SESSION['nameErr'],$_SESSION['phoneErr'],$_SESSION['addressErr']);
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +41,6 @@
                 <div class="w-[90%] lg:w-[50%]" >
                     <p class="bg-yellow-100 mt-5 rounded text-center text-xl font-bold py-2 text-blue-900 ">Ajouter clients</p>
                     <form class="flex flex-col justify-center pl-10 bg-blue-900 h-96 rounded-md shadow-xl" action="../../Controllers/Clients/ajouterClient.php" method="post">
-                        <?php if ($numErr) echo "<p class='text-red-600 text-sm lg:text-[15px]'>$numErr</p><br>"?>
                         <label class="text-yellow-100">Nom :</label>
                         <input class="w-[80%] bg-yellow-50 rounded focus:outline-none focus:border-transparent" type="text" name="nom"><br>
                         <?php if ($nameErr) echo "<p class='text-red-600 text-sm lg:text-[15px]'>$nameErr</p><br>"?>
